@@ -13,9 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware('tenant')->group(function () {
+    Route::get('/', function () {
+        return 'hi' . auth()->user()->name;
+    });
 });
+
+// Route::domain('{tenant}.localhost')->middleware('tenant')->group(function(){
+//     Route::prefix('owner')->middleware(['auth', 'owner'])->group(function () {
+//         Route::get('/Entries/edit/{id}',function($id){
+//             echo $id;
+//         });
+//     });
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
