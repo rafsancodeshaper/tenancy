@@ -10,6 +10,7 @@
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
+        "tenancy/identification-driver-http": "^2.0",
         "tenancy/tenancy": "^2.0"
     },
     "require-dev": {
